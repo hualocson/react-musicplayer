@@ -1,13 +1,166 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Fira Sans", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+	background: #ddd;
+}
+
+.App {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.c-player {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 500px;
+	background-color: #313131;
+	padding: 25px 50px;
+	border-radius: 10px;
+	box-shadow: inset -6px -6px 12px rgba(0, 0, 0, 0.8),
+		inset 6px 6px 12px rgba(255, 255, 255, 0.4);
+}
+
+.c-player > h4 {
+	color: #fff;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 400;
+	text-align: center;
+}
+
+.c-player > p {
+	color: #aaa;
+	font-size: 14px;
+	text-align: center;
+	font-weight: 400;
+	align-self: start;
+}
+.c-player-details .details-img {
+	width: 250px;
+	position: relative;
+	margin: 50px auto;
+}
+
+.c-player-details .details-img img {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+	border-radius: 50%;
+	object-fit: cover;
+	overflow: hidden;
+	box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.8),
+		-6px -6px 12px rgba(255, 255, 255, 0.4);
+}
+
+.c-player-details .details-img img.isPlaying {
+	animation: spin 8s linear infinite;
+}
+.c-player-details .details-img img.Paused {
+	animation-play-state: paused;
+}
+
+.c-player-details .details-title {
+	color: #eee;
+	font-size: 28px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8),
+		-2px -2px 4px rgba(255, 255, 255, 0.4);
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.c-player-details .details-artist {
+	color: #aaa;
+	font-size: 20px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8),
+		-2px -2px 4px rgba(255, 255, 255, 0.4);
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.c-player-controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+
+.c-player-controls .play-btn {
+	display: flex;
+	margin: 0 30px;
+	padding: 20px;
+	border-radius: 50%;
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8),
+		-4px -4px 10px rgba(255, 255, 255, 0.4),
+		inset -4px -4px 10px rgba(0, 0, 0, 0.4),
+		inset 4px 4px 10px rgba(255, 255, 255, 0.4);
+	background-color: #ffce00;
+	color: #fff;
+	font-size: 24px;
+	height: 60px;
+	width: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+.c-player-controls .skip-btn {
+	background: none;
+	color: #888;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-size: 18px;
+}
+.c-playlist-header {
+	color: #fff;
+	font-style: italic;
+	font-size: 20px;
+	margin-top: 20px;
+	font-weight: bold;
+	margin-left: 10px;
+	align-self: start;
+}
+.c-playlist-songs {
+	font-size: 14px;
+	margin-top: 10px;
+	color: #aaa;
+	display: flex;
+	list-style: none;
+	flex-direction: column;
+	gap: 5px;
+	align-self: start;
+}
+
+.c-playlist-songs .active {
+	color: #fff;
+	font-weight: 800;
+}
+
+@-moz-keyframes spin {
+	100% {
+		-moz-transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes spin {
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@keyframes spin {
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
